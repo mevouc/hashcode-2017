@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <set>
 #include <vector>
 
 #include "input.hh"
@@ -13,4 +13,12 @@ struct cachediff
   int diff;
 };
 
-vector<set<cachediff>> sortcaches(vector<endpoint> endpoints);
+struct cachediff_cmp
+{
+  bool operator()(const cachediff& lhs, const cachediff& rhs) const
+  {
+    return lhs.diff < rhs.diff;
+  }
+};
+
+vector<set<cachediff, cachediff_cmp>> sortcaches(vector<endpoint> endpoints);
