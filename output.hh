@@ -1,13 +1,23 @@
 #pragma once
+#include "input.hh"
+#include <fstream>
+
+struct cache_capacity
+{
+  unsigned used; // used memory
+  std::vector<int> v; //videos
+};
 
 struct solution
 {
-  solution(const intput& in) : in(in), datas(in.C, {})
+  solution(const input& in) : in(in), data(in.c)
   {
   }
 
   input in;
-  std::vector<std::vector<int>> data;
+  std::vector<cache_capacity> data;
   int compute_score();
   void print_solution(std::ofstream& ofs);
-}
+
+  bool add_video(int video, int cache);
+};
