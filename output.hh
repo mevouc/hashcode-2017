@@ -9,5 +9,5 @@ struct solution
   input in;
   std::vector<std::vector<int>> data;
   int compute_score();
-  void print_solution();
+  void print_solution(std::ofstream& ofs);
 }
