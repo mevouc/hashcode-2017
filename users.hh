@@ -17,7 +17,7 @@ struct cachediff_cmp
 {
   bool operator()(const cachediff& lhs, const cachediff& rhs) const
   {
-    return lhs.diff < rhs.diff;
+    return lhs.diff > rhs.diff;
   }
 };
 
