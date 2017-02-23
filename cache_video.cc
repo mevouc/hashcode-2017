@@ -7,7 +7,7 @@ vector<vector<videoscore>> compute_cachevideo(const input& in)
   vector<vector<videoscore>> result(in.c);
   for (size_t i = 0; i < in.c; ++i)
   {
-    result.resize(in.video_size.size());
+    result[i].resize(in.video_size.size());
     for (size_t j = 0; j < in.video_size.size(); ++j)
       result[i][j] = videoscore{int(j), 0};
   }
