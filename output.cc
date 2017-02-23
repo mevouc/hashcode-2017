@@ -1,4 +1,5 @@
 #include "output.hh"
+#include <algorithm>
 
 void solution::print_solution(std::ofstream& ofs)
 {
@@ -28,4 +29,27 @@ bool solution::add_video(int video, int cache)
     return true;
   }
   return false;
+}
+
+int solution::compute_score()
+{
+    unsigned long long num;
+    unsigned long long denum;
+    for (auto request : in.requests)
+    {
+        denum += request.rn;
+        unsigned gain = 0;
+        for (auto cache : in.endpoints[request.re].cache_servers)
+        {
+            auto vid_in_cache = std::find(data[cache.c].v.begin(),
+                    data[cache.c].v.end(), request.rv);
+            if (vid_in_cache != data[cache.c].v.end())
+            {
+                unsigned diff = (in.endpoints[request.re].ld - cache.lc);
+                gain = gain < diff ? gain : diff;
+            }
+        }
+        num += gain;
+    }
+    return (num / denum * 1000);  
 }
