@@ -32,6 +32,7 @@ input parse_input()
       cin >> c.lc;
       e.cache_servers.push_back(c);
     }
+    in.endpoints.push_back(e);
   }
   for (size_t i = 0; i < r; ++i)
   {

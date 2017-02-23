@@ -32,3 +32,5 @@ struct input
   vector<endpoint> endpoints;
   vector<request> requests;
 };
+
+input parse_input();

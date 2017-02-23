@@ -1,5 +1,5 @@
 CXX?=g++
-CXXFLAGS=-std=c++14 -Wall -Wextra -Wpedantic
+CXXFLAGS=-std=c++14 -Wall -Wextra -Wpedantic -g
 DIR=$(USER)
 
 main: input.o main.o output.o

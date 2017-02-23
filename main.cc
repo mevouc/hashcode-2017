@@ -2,13 +2,7 @@
 #include "genfilestream.hh"
 #include "input.hh"
 
-int main(int, char* argv[])
+int main(int, char*[])
 {
-  auto outputEnv = output(argv[1]);
-  auto mystream = outputEnv.getstream(0);
-  mystream << "Test\n";
-  mystream.close();
-  std::cout << "Test.\n";
-
-  input i;
+  auto i = parse_input();
 }
