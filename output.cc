@@ -53,3 +53,17 @@ int solution::compute_score()
     }
     return (num / denum * 1000);  
 }
+
+void solution::format_solution(vector<vector<videoscore>> caches)
+{
+  for (unsigned i = 0; i < data.size(); ++i)
+  {
+    for (auto& videoscore : caches.at(i))
+    {
+      if (videoscore.score == 0)
+        break;
+      else
+        addvideo(videoscore.videoId, i);
+    }
+  }
+}
