@@ -1,5 +1,6 @@
 #include <iostream>
 #include "genfilestream.hh"
+#include "input.hh"
 
 int main(int, char* argv[])
 {
@@ -8,4 +9,6 @@ int main(int, char* argv[])
   mystream << "Test\n";
   mystream.close();
   std::cout << "Test.\n";
+
+  input i;
 }
