@@ -1,4 +1,5 @@
 #include "output.hh"
+#include "cache_video.hh"
 #include <algorithm>
 
 void solution::print_solution(std::ofstream& ofs)
@@ -63,7 +64,7 @@ void solution::format_solution(vector<vector<videoscore>> caches)
       if (videoscore.score == 0)
         break;
       else
-        addvideo(videoscore.videoId, i);
+        add_video(videoscore.videoId, i);
     }
   }
 }

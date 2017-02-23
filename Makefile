@@ -2,8 +2,8 @@ CXX?=g++
 CXXFLAGS=-std=c++14 -Wall -Wextra -Wpedantic -g
 DIR=$(USER)
 
-main: input.o main.o output.o cache_video.o
+main: input.o main.o output.o cache_video.o users.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-submision: all
-	mkdir $(DIR); ./main $(DIR)
+submission: main
+	mkdir $(DIR); ./main $(DIR) < in/kittens.in

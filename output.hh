@@ -1,5 +1,6 @@
 #pragma once
 #include "input.hh"
+#include "cache_video.hh"
 #include <fstream>
 
 struct cache_capacity
