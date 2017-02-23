@@ -1,8 +1,13 @@
 #include <iostream>
 #include "genfilestream.hh"
 #include "input.hh"
+#include "output.hh"
 
-int main(int, char*[])
+int main(int, char* argv[])
 {
   auto i = parse_input();
+  auto sol = solution(i);
+  auto o = output(argv[1]);
+  auto ofs = o.getstream(sol.compute_score());
+  sol.print_solution(ofs);
 }
