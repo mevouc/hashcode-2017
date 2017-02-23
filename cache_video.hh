@@ -1,6 +1,8 @@
 #pragma once
+#include <set>
 #include "input.hh"
 
+using namespace std;
 struct videoscore
 {
   int videoId;
@@ -11,8 +13,7 @@ struct videoscore_cmp
 {
   bool operator()(const videoscore& lhs, const videoscore& rhs) const
   {
-    return lhs.diff > rhs.diff;
+    return lhs.score > rhs.score;
   }
 };
-
-vector<set<videoscore, videoscore_cmp>> compute_cachevideo(const input& in);
+vector<vector<videoscore>> compute_cachevideo(const input& in);
