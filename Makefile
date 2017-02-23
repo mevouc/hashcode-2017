@@ -2,7 +2,8 @@ CXX?=g++
 CXXFLAGS=-std=c++14 -Wall -Wextra -Wpedantic
 DIR=$(USER)
 
-all: main
+main: input.o main.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 submision: all
 	mkdir $(DIR); ./main $(DIR)
